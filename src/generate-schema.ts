@@ -28,6 +28,9 @@ export function generateSchema(value: any) {
     case typeof value === 'string':
       return { type: 'string' };
 
+    case Array.isArray(value):
+      return { type: 'array' };
+
     case !Object.keys(value).length:
       return { type: 'object' };
 

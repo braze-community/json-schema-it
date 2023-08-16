@@ -70,3 +70,9 @@ describe('object', () => {
     });
   });
 });
+
+describe('array', () => {
+  it('converts empty array', () => {
+    expect(generateSchema([])).toEqual({ type: 'array' });
+  });
+});
