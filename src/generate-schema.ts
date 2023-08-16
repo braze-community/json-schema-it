@@ -9,4 +9,8 @@ export function generateSchema(value: any) {
   if (typeof value === 'string') {
     return { type: 'string' };
   }
+
+  if (Number.isInteger(value)) {
+    return { type: 'integer' };
+  }
 }

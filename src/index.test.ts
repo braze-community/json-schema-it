@@ -5,7 +5,11 @@ describe('generateSchema', () => {
     expect(generateSchema).toBeInstanceOf(Function);
   });
 
-  it('generates string', () => {
-    expect(generateSchema('')).toEqual({ type: 'string' });
+  it.each(['', 'foo'])('generates string', (value) => {
+    expect(generateSchema(value)).toEqual({ type: 'string' });
+  });
+
+  it.each([-1, 0, 1, 42])('generates integer', (value) => {
+    expect(generateSchema(value)).toEqual({ type: 'integer' });
   });
 });
