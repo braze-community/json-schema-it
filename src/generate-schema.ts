@@ -10,7 +10,11 @@ export function generateSchema(value: any) {
     return { type: 'string' };
   }
 
-  if (Number.isInteger(value)) {
-    return { type: 'integer' };
+  if (typeof value === 'number') {
+    if (Number.isInteger(value)) {
+      return { type: 'integer' };
+    } else {
+      return { type: 'number' };
+    }
   }
 }
