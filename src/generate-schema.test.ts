@@ -36,4 +36,34 @@ describe('object', () => {
   it('converts empty object', () => {
     expect(generateSchema({})).toEqual({ type: 'object' });
   });
+
+  it('converts object with key-value', () => {
+    expect(generateSchema({ a: 1 })).toEqual({
+      type: 'object',
+      properties: { a: { type: 'integer' } },
+    });
+  });
+
+  it('converts object with key-value pairs', () => {
+    expect(generateSchema({ a: 1 })).toEqual({
+      type: 'object',
+      properties: { a: { type: 'integer' } },
+    });
+  });
+
+  it('converts object with key-value', () => {
+    expect(generateSchema({ a: 1, b: 'two' })).toEqual({
+      type: 'object',
+      properties: { a: { type: 'integer' }, b: { type: 'string' } },
+    });
+  });
+
+  it('converts nested object', () => {
+    expect(generateSchema({ a: { b: 2.1 } })).toEqual({
+      type: 'object',
+      properties: {
+        a: { type: 'object', properties: { b: { type: 'number' } } },
+      },
+    });
+  });
 });

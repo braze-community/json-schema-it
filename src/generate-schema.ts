@@ -10,9 +10,6 @@ export function generateSchema(value: any) {
     case value === null:
       return { type: 'null' };
 
-    case value instanceof Object:
-      return { type: 'object' };
-
     case Number.isInteger(value):
       return { type: 'integer' };
 
@@ -21,6 +18,22 @@ export function generateSchema(value: any) {
 
     case typeof value === 'string':
       return { type: 'string' };
+
+    case value instanceof Object && !Object.keys(value).length:
+      return { type: 'object' };
+
+    case value instanceof Object:
+      return {
+        type: 'object',
+        properties: Object.entries(value).reduce(
+          (accumulator, [key, value]) => {
+            accumulator[key] = generateSchema(value);
+            return accumulator;
+          },
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          {} as Record<string, any>,
+        ),
+      };
 
     default:
       throw new TypeError('First argument must be a JSON value');
