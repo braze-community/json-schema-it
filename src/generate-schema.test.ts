@@ -1,11 +1,14 @@
 import { generateSchema } from './index';
 
-describe('undefined', () => {
-  it('throws error', () => {
-    expect(() => generateSchema(undefined)).toThrow(
-      new TypeError('First argument must be a JSON value'),
-    );
-  });
+describe('invalid JSON value', () => {
+  it.each([undefined, () => {}, new Date(), Symbol('symbol')])(
+    'throws error for %p',
+    (value) => {
+      expect(() => generateSchema(value)).toThrow(
+        new TypeError('First argument must be a JSON value'),
+      );
+    },
+  );
 });
 
 describe('string', () => {
