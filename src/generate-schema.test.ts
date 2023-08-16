@@ -1,5 +1,13 @@
 import { generateSchema } from './index';
 
+describe('undefined', () => {
+  it('throws error', () => {
+    expect(() => generateSchema(undefined)).toThrow(
+      new TypeError('First argument must be a JSON value'),
+    );
+  });
+});
+
 describe('string', () => {
   it.each(['', 'foo'])('converts %p', (value) => {
     expect(generateSchema(value)).toEqual({ type: 'string' });

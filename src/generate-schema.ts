@@ -6,6 +6,10 @@
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function generateSchema(value: any) {
+  if (typeof value === 'undefined') {
+    throw new TypeError('First argument must be a JSON value');
+  }
+
   if (value === null) {
     return { type: 'null' };
   }
