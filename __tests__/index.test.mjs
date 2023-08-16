@@ -6,6 +6,6 @@ import { name } from '../esm/index.js';
 
 describe('index', () => {
   it('exports name', () => {
-    assert.strictEqual(name, 'npm-package-typescript-template');
+    assert.strictEqual(name, 'json-schema-it');
   });
 });

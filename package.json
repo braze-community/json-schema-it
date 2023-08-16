@@ -1,7 +1,7 @@
 {
-  "name": "npm-package-typescript-template",
+  "name": "json-schema-it",
   "version": "1.0.0-alpha",
-  "description": "npm package TypeScript template",
+  "description": "JSON Schema generator.",
   "author": "Mark <mark@remarkablemark.org>",
   "main": "cjs/index.js",
   "module": "esm/index.js",
@@ -30,13 +30,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/remarkablemark/npm-package-typescript-template"
+    "url": "https://github.com/braze-community/json-schema-it"
   },
   "bugs": {
-    "url": "https://github.com/remarkablemark/npm-package-typescript-template/issues"
+    "url": "https://github.com/braze-community/json-schema-it/issues"
   },
   "keywords": [
-    "npm-package-typescript-template"
+    "json-schema",
+    "json",
+    "schema",
+    "javascript",
+    "js",
+    "document"
   ],
   "devDependencies": {
     "@commitlint/cli": "17.7.1",
