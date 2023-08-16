@@ -10,14 +10,17 @@ export function generateSchema(value: any) {
     case value === null:
       return { type: 'null' };
 
-    case typeof value === 'string':
-      return { type: 'string' };
+    case value instanceof Object:
+      return { type: 'object' };
 
     case Number.isInteger(value):
       return { type: 'integer' };
 
     case typeof value === 'number':
       return { type: 'number' };
+
+    case typeof value === 'string':
+      return { type: 'string' };
 
     default:
       throw new TypeError('First argument must be a JSON value');

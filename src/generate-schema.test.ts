@@ -31,3 +31,9 @@ describe('null', () => {
     expect(generateSchema(null)).toEqual({ type: 'null' });
   });
 });
+
+describe('object', () => {
+  it('converts empty object', () => {
+    expect(generateSchema({})).toEqual({ type: 'object' });
+  });
+});
