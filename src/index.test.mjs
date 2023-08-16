@@ -2,10 +2,10 @@ import { describe, it } from 'node:test';
 
 import assert from 'assert';
 
-import { name } from '../esm/index.js';
+import { generateSchema } from '../esm/index.js';
 
-describe('index', () => {
-  it('exports name', () => {
-    assert.strictEqual(name, 'json-schema-it');
+describe('generateSchema', () => {
+  it('generates string', () => {
+    assert.deepEqual(generateSchema(''), { type: 'string' });
   });
 });

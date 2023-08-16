@@ -1,5 +1,7 @@
-import { name } from './index';
+import { generateSchema } from './index';
 
-it('exports name', () => {
-  expect(name).toBe('json-schema-it');
+describe('generateSchema', () => {
+  it('generates string', () => {
+    expect(generateSchema('')).toEqual({ type: 'string' });
+  });
 });
