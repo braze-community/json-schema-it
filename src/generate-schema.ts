@@ -6,6 +6,10 @@
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function generateSchema(value: any) {
+  if (value === null) {
+    return { type: 'null' };
+  }
+
   if (typeof value === 'string') {
     return { type: 'string' };
   }
