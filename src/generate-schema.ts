@@ -6,23 +6,20 @@
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function generateSchema(value: any) {
-  if (typeof value === 'undefined') {
-    throw new TypeError('First argument must be a JSON value');
-  }
+  switch (true) {
+    case value === null:
+      return { type: 'null' };
 
-  if (value === null) {
-    return { type: 'null' };
-  }
+    case typeof value === 'string':
+      return { type: 'string' };
 
-  if (typeof value === 'string') {
-    return { type: 'string' };
-  }
-
-  if (typeof value === 'number') {
-    if (Number.isInteger(value)) {
+    case Number.isInteger(value):
       return { type: 'integer' };
-    } else {
+
+    case typeof value === 'number':
       return { type: 'number' };
-    }
+
+    default:
+      throw new TypeError('First argument must be a JSON value');
   }
 }
