@@ -75,4 +75,11 @@ describe('array', () => {
   it('converts empty array', () => {
     expect(generateSchema([])).toEqual({ type: 'array' });
   });
+
+  it('converts array', () => {
+    expect(generateSchema([1])).toEqual({
+      type: 'array',
+      items: { type: 'integer' },
+    });
+  });
 });

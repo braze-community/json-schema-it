@@ -7,7 +7,7 @@ const error = new TypeError('First argument must be a JSON value');
  * @returns - JSON schema.
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function generateSchema(value: any) {
+export function generateSchema(value: any): any {
   switch (true) {
     case value === undefined:
     case typeof value === 'undefined':
@@ -28,8 +28,11 @@ export function generateSchema(value: any) {
     case typeof value === 'string':
       return { type: 'string' };
 
-    case Array.isArray(value):
+    case Array.isArray(value) && !value.length:
       return { type: 'array' };
+
+    case Array.isArray(value):
+      return { type: 'array', items: generateSchema(value[0]) };
 
     case !Object.keys(value).length:
       return { type: 'object' };
