@@ -29,6 +29,12 @@ describe('number', () => {
   });
 });
 
+describe('boolean', () => {
+  it.each([true, false])('converts %p', (value) => {
+    expect(generateSchema(value)).toEqual({ type: 'boolean' });
+  });
+});
+
 describe('null', () => {
   it('converts null', () => {
     expect(generateSchema(null)).toEqual({ type: 'null' });

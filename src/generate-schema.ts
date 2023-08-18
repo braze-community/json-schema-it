@@ -30,6 +30,9 @@ export function generateSchema(value: any): any {
     case typeof value === 'string':
       return { type: 'string' };
 
+    case typeof value === 'boolean':
+      return { type: 'boolean' };
+
     case Array.isArray(value):
       if (value.length === 1) {
         return { type: 'array', items: generateSchema(value[0]) };
