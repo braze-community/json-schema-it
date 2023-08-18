@@ -11,7 +11,9 @@
 ## Quick Start
 
 ```ts
-import { name } from 'json-schema-it';
+import { generateSchema } from 'json-schema-it';
+
+generateSchema(42); // { type: 'integer' }
 ```
 
 ## Installation
@@ -30,8 +32,41 @@ yarn add json-schema-it
 
 ## Usage
 
+ES Modules:
+
 ```ts
-import { name } from 'json-schema-it';
+import { generateSchema } from 'json-schema-it';
+```
+
+CommonJS:
+
+```ts
+const { generateSchema } = require('json-schema-it');
+```
+
+Generate JSON Schema:
+
+```ts
+generateSchema({
+  productId: 1,
+  productName: 'A green door',
+  'price': 12.50,
+  'tags': ['home', 'green'],
+});
+```
+
+Output:
+
+```ts
+{
+  type: 'object',
+  properties: {
+    productId: { type: 'integer' },
+    productName: { type: 'string' },
+    price: { type: 'number' },
+    tags: { type: 'array', items: { type: 'string' } },
+  },
+}
 ```
 
 ## Release
