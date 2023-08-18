@@ -82,4 +82,17 @@ describe('array', () => {
       items: { type: 'integer' },
     });
   });
+
+  it('converts array with same types', () => {
+    expect(generateSchema([1.2, 2.3])).toEqual({
+      type: 'array',
+      items: { type: 'number' },
+    });
+  });
+
+  it('converts array with mixed types', () => {
+    expect(generateSchema([1, 'two'])).toEqual({
+      type: 'array',
+    });
+  });
 });

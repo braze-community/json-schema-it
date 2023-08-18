@@ -1,3 +1,5 @@
+import { deepEqual } from './utils';
+
 const error = new TypeError('First argument must be a JSON value');
 
 /**
@@ -28,16 +30,25 @@ export function generateSchema(value: any): any {
     case typeof value === 'string':
       return { type: 'string' };
 
-    case Array.isArray(value) && !value.length:
+    case Array.isArray(value):
+      if (value.length === 1) {
+        return { type: 'array', items: generateSchema(value[0]) };
+      }
+
+      if (value.length > 1) {
+        const items = value.map(generateSchema);
+        if (deepEqual(...items)) {
+          return { type: 'array', items: items[0] };
+        }
+      }
+
       return { type: 'array' };
 
-    case Array.isArray(value):
-      return { type: 'array', items: generateSchema(value[0]) };
-
-    case !Object.keys(value).length:
-      return { type: 'object' };
-
     case value instanceof Object:
+      if (!Object.keys(value).length) {
+        return { type: 'object' };
+      }
+
       return {
         type: 'object',
         properties: Object.entries(value).reduce(
