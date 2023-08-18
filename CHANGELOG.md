@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/braze-community/json-schema-it/compare/v1.0.0...v1.0.1) (2023-08-18)
+
+
+### Documentation
+
+* **readme:** fix code blocks ([e8232eb](https://github.com/braze-community/json-schema-it/commit/e8232eb262725e0fb7a8394908e6f07d5ad093f4))
+
 ## 1.0.0 (2023-08-18)
 
 
