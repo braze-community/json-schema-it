@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/braze-community/json-schema-it/compare/v1.0.1...v1.1.0) (2023-08-18)
+
+
+### Features
+
+* **generate-schema:** add boolean type ([0435616](https://github.com/braze-community/json-schema-it/commit/04356165539d28f2f31f43be2f2b71ce88e6f35e))
+
 ## [1.0.1](https://github.com/braze-community/json-schema-it/compare/v1.0.0...v1.0.1) (2023-08-18)
 
 
