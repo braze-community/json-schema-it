@@ -4,6 +4,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/json-schema-it.svg)](https://www.npmjs.com/package/json-schema-it)
 [![build](https://github.com/braze-community/json-schema-it/actions/workflows/build.yml/badge.svg)](https://github.com/braze-community/json-schema-it/actions/workflows/build.yml)
+[![codecov](https://codecov.io/gh/braze-community/json-schema-it/graph/badge.svg?token=XRoK3dG4YV)](https://codecov.io/gh/braze-community/json-schema-it)
 
 [JSON Schema](https://json-schema.org/) generator.
 
