@@ -12,8 +12,49 @@ describe('invalid JSON value', () => {
 });
 
 describe('string', () => {
-  it.each(['', 'foo'])('converts %p', (value) => {
-    expect(generateSchema(value)).toEqual({ type: 'string' });
+  describe('default', () => {
+    it.each(['', 'foo'])('converts %p', (value) => {
+      expect(generateSchema(value)).toEqual({ type: 'string' });
+    });
+  });
+
+  describe('date-time', () => {
+    it.each(['2018-11-13T20:20:39+00:00', '2022-11-02T09:03:19.967Z'])(
+      'converts %p',
+      (value) => {
+        expect(generateSchema(value)).toEqual({
+          type: 'string',
+          format: 'date-time',
+        });
+      },
+    );
+  });
+
+  describe('time', () => {
+    it.each(['20:20:39+00:00', '20:20:39'])('converts %p', (value) => {
+      expect(generateSchema(value)).toEqual({
+        type: 'string',
+        format: 'time',
+      });
+    });
+  });
+
+  describe('date', () => {
+    it.each(['2018-11-13'])('converts %p', (value) => {
+      expect(generateSchema(value)).toEqual({
+        type: 'string',
+        format: 'date',
+      });
+    });
+  });
+
+  describe('email', () => {
+    it.each(['user@example.com'])('converts %p', (value) => {
+      expect(generateSchema(value)).toEqual({
+        type: 'string',
+        format: 'email',
+      });
+    });
   });
 });
 

@@ -1,3 +1,5 @@
+import validator from 'validator';
+
 import { deepEqual } from './utils';
 
 /**
@@ -16,21 +18,48 @@ export function generateSchema(value: any): any {
     case value instanceof Date:
       throw new TypeError(`Invalid JSON value: ${String(value)}`);
 
+    /**
+     * @see https://json-schema.org/understanding-json-schema/reference/null.html
+     */
     case value === null:
       return { type: 'null' };
 
-    case Number.isInteger(value):
-      return { type: 'integer' };
-
+    /**
+     * @see https://json-schema.org/understanding-json-schema/reference/numeric.html
+     */
     case typeof value === 'number':
-      return { type: 'number' };
+      return { type: Number.isInteger(value) ? 'integer' : 'number' };
 
-    case typeof value === 'string':
-      return { type: 'string' };
-
+    /**
+     * @see https://json-schema.org/understanding-json-schema/reference/boolean.html
+     */
     case typeof value === 'boolean':
       return { type: 'boolean' };
 
+    /**
+     * @see https://json-schema.org/understanding-json-schema/reference/string.html
+     */
+    case typeof value === 'string':
+      if (validator.isISO8601(value)) {
+        return {
+          type: 'string',
+          format: value.includes('T') ? 'date-time' : 'date',
+        };
+      }
+
+      if (validator.isTime(value.split('+')[0], { mode: 'withSeconds' })) {
+        return { type: 'string', format: 'time' };
+      }
+
+      if (validator.isEmail(value)) {
+        return { type: 'string', format: 'email' };
+      }
+
+      return { type: 'string' };
+
+    /**
+     * @see https://json-schema.org/understanding-json-schema/reference/array.html
+     */
     case Array.isArray(value):
       if (value.length === 1) {
         return { type: 'array', items: generateSchema(value[0]) };
@@ -45,6 +74,9 @@ export function generateSchema(value: any): any {
 
       return { type: 'array' };
 
+    /**
+     * @see https://json-schema.org/understanding-json-schema/reference/object.html
+     */
     case value instanceof Object:
       if (!Object.keys(value).length) {
         return { type: 'object' };
