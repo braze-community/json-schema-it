@@ -69,6 +69,12 @@ Output:
 }
 ```
 
+An error will be thrown for an invalid JSON value:
+
+```ts
+generateSchema(undefined); // Uncaught TypeError: Invalid JSON value: undefined
+```
+
 ## Release
 
 Release is automated with [Release Please](https://github.com/googleapis/release-please).
