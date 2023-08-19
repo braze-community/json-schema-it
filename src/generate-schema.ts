@@ -1,3 +1,5 @@
+import validator from 'validator';
+
 import { deepEqual } from './utils';
 
 /**
@@ -25,11 +27,17 @@ export function generateSchema(value: any): any {
     case typeof value === 'number':
       return { type: 'number' };
 
-    case typeof value === 'string':
-      return { type: 'string' };
-
     case typeof value === 'boolean':
       return { type: 'boolean' };
+
+    /**
+     * @see https://json-schema.org/understanding-json-schema/reference/string.html
+     */
+    case typeof value === 'string':
+      if (validator.isISO8601(value)) {
+        return { type: 'string', format: 'date-time' };
+      }
+      return { type: 'string' };
 
     case Array.isArray(value):
       if (value.length === 1) {

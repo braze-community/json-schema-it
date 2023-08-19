@@ -12,8 +12,19 @@ describe('invalid JSON value', () => {
 });
 
 describe('string', () => {
-  it.each(['', 'foo'])('converts %p', (value) => {
-    expect(generateSchema(value)).toEqual({ type: 'string' });
+  describe('default', () => {
+    it.each(['', 'foo'])('converts %p', (value) => {
+      expect(generateSchema(value)).toEqual({ type: 'string' });
+    });
+  });
+
+  describe('date-time', () => {
+    it.each(['2018-11-13T20:20:39+00:00'])('converts %p', (value) => {
+      expect(generateSchema(value)).toEqual({
+        type: 'string',
+        format: 'date-time',
+      });
+    });
   });
 });
 
