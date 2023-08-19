@@ -35,7 +35,10 @@ export function generateSchema(value: any): any {
      */
     case typeof value === 'string':
       if (validator.isISO8601(value)) {
-        return { type: 'string', format: 'date-time' };
+        return {
+          type: 'string',
+          format: value.includes('T') ? 'date-time' : 'date',
+        };
       }
 
       if (validator.isTime(value.split('+')[0], { mode: 'withSeconds' })) {

@@ -38,6 +38,15 @@ describe('string', () => {
       });
     });
   });
+
+  describe('date', () => {
+    it.each(['2018-11-13'])('converts %p', (value) => {
+      expect(generateSchema(value)).toEqual({
+        type: 'string',
+        format: 'date',
+      });
+    });
+  });
 });
 
 describe('integer', () => {
