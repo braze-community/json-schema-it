@@ -43,6 +43,9 @@
     "js",
     "document"
   ],
+  "dependencies": {
+    "validator": "13.11.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "17.7.1",
     "@commitlint/config-conventional": "17.7.0",
