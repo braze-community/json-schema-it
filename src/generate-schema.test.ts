@@ -47,6 +47,15 @@ describe('string', () => {
       });
     });
   });
+
+  describe('email', () => {
+    it.each(['user@example.com'])('converts %p', (value) => {
+      expect(generateSchema(value)).toEqual({
+        type: 'string',
+        format: 'email',
+      });
+    });
+  });
 });
 
 describe('integer', () => {

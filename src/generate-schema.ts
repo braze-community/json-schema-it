@@ -45,6 +45,10 @@ export function generateSchema(value: any): any {
         return { type: 'string', format: 'time' };
       }
 
+      if (validator.isEmail(value)) {
+        return { type: 'string', format: 'email' };
+      }
+
       return { type: 'string' };
 
     case Array.isArray(value):
