@@ -1,7 +1,5 @@
 import { deepEqual } from './utils';
 
-const error = new TypeError('First argument must be a JSON value');
-
 /**
  * Generate JSON schema from value.
  *
@@ -16,7 +14,7 @@ export function generateSchema(value: any): any {
     case typeof value === 'function':
     case typeof value === 'symbol':
     case value instanceof Date:
-      throw error;
+      throw new TypeError(`Invalid JSON value: ${String(value)}`);
 
     case value === null:
       return { type: 'null' };
@@ -66,6 +64,6 @@ export function generateSchema(value: any): any {
 
     /* istanbul ignore next */
     default:
-      throw error;
+      throw new TypeError(`Invalid JSON value: ${value}`);
   }
 }
