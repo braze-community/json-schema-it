@@ -5,7 +5,7 @@ describe('invalid JSON value', () => {
     'throws error for %p',
     (value) => {
       expect(() => generateSchema(value)).toThrow(
-        new TypeError('First argument must be a JSON value'),
+        new TypeError(`Invalid JSON value: ${String(value)}`),
       );
     },
   );
