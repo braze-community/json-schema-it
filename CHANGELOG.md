@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.0](https://github.com/braze-community/json-schema-it/compare/v1.1.1...v1.2.0) (2023-08-19)
+
+
+### Features
+
+* **generate-schema:** add "date-time" format for string type ([f109f0e](https://github.com/braze-community/json-schema-it/commit/f109f0ed075dcaf4d40dfab1958784e6bfe92661))
+* **generate-schema:** add "date" format for string type ([e76e835](https://github.com/braze-community/json-schema-it/commit/e76e835f773bbc9a5eafb8f5bbf0b077bd1d5572))
+* **generate-schema:** add "email" format for string type ([6df3a1c](https://github.com/braze-community/json-schema-it/commit/6df3a1c644e06e2f1b96262ddc21d51a18ca33f3))
+* **generate-schema:** add "time" format for string type ([1669363](https://github.com/braze-community/json-schema-it/commit/1669363656463e1cd6995d2c89778ea3040b28bc))
+
 ## [1.1.1](https://github.com/braze-community/json-schema-it/compare/v1.1.0...v1.1.1) (2023-08-19)
 
 
