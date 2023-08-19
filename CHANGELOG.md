@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/braze-community/json-schema-it/compare/v1.1.0...v1.1.1) (2023-08-19)
+
+
+### Bug Fixes
+
+* **generate-schema:** improve TypeError for invalid JSON value ([e0cd680](https://github.com/braze-community/json-schema-it/commit/e0cd6800f845271b3ebbfe38469e6f411e5d1b40))
+
 ## [1.1.0](https://github.com/braze-community/json-schema-it/compare/v1.0.1...v1.1.0) (2023-08-18)
 
 
