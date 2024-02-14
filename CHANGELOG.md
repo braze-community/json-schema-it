@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.6](https://github.com/braze-community/json-schema-it/compare/v1.2.5...v1.2.6) (2024-02-14)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump @types/validator from 13.11.8 to 13.11.9 ([#202](https://github.com/braze-community/json-schema-it/issues/202)) ([103de0a](https://github.com/braze-community/json-schema-it/commit/103de0ad07bc6ea3da7cdfec11d618a41e55499a))
+
 ## [1.2.5](https://github.com/braze-community/json-schema-it/compare/v1.2.4...v1.2.5) (2024-01-12)
 
 
