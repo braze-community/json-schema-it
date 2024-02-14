@@ -43,7 +43,7 @@
     "document"
   ],
   "dependencies": {
-    "@types/validator": "13.11.8",
+    "@types/validator": "13.11.9",
     "validator": "13.11.0"
   },
   "devDependencies": {
