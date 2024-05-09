@@ -44,7 +44,7 @@
   ],
   "dependencies": {
     "@types/validator": "13.11.9",
-    "validator": "13.11.0"
+    "validator": "13.12.0"
   },
   "devDependencies": {
     "@commitlint/cli": "19.3.0",
