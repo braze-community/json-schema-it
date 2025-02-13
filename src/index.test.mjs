@@ -2,7 +2,7 @@ import { describe, it } from 'node:test';
 
 import assert from 'assert';
 
-import { generateSchema } from '../esm/index.js';
+import { generateSchema } from '../cjs/index.js';
 
 describe('generateSchema', () => {
   it('exports function', () => {
