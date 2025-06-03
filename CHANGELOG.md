@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.16](https://github.com/braze-community/json-schema-it/compare/v1.2.15...v1.2.16) (2025-06-03)
+
+
+### Build System
+
+* **deps:** bump validator from 13.15.0 to 13.15.15 ([#613](https://github.com/braze-community/json-schema-it/issues/613)) ([ce5c736](https://github.com/braze-community/json-schema-it/commit/ce5c7368f16e4615200ae9b4ff0041ff1f64b504))
+
 ## [1.2.15](https://github.com/braze-community/json-schema-it/compare/v1.2.14...v1.2.15) (2025-05-23)
 
 
