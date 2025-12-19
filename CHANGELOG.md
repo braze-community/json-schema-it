@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.22](https://github.com/braze-community/json-schema-it/compare/v1.2.21...v1.2.22) (2025-12-19)
+
+
+### Continuous Integration
+
+* **github:** remove NODE_AUTH_TOKEN from publish step ([31de2c1](https://github.com/braze-community/json-schema-it/commit/31de2c1c9bcf67d0619a42adc225fa49e9fd0677))
+
 ## [1.2.21](https://github.com/braze-community/json-schema-it/compare/v1.2.20...v1.2.21) (2025-12-19)
 
 
