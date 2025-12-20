@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.23](https://github.com/braze-community/json-schema-it/compare/v1.2.22...v1.2.23) (2025-12-20)
+
+
+### Build System
+
+* **nvmrc:** bump Node.js to 24 and support publishing with OIDC ([a404038](https://github.com/braze-community/json-schema-it/commit/a4040384fadf7c05d0c2a98ad5a35097ce88c9d4))
+
 ## [1.2.22](https://github.com/braze-community/json-schema-it/compare/v1.2.21...v1.2.22) (2025-12-19)
 
 
