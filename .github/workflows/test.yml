@@ -28,7 +28,7 @@ jobs:
       - name: Run module tests
         run: npm run test:esm
 
-      - name: Codecov
-        uses: codecov/codecov-action@v6
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@57e3a136b779b570ffcdbf80b3bdc90e7fab3de2 # v6.0.0
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
