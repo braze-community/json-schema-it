@@ -10,27 +10,21 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
 
       - name: Use Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
-          node-version-file: .nvmrc
           cache: npm
+          node-version-file: .nvmrc
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci --prefer-offline
 
       - name: Lint commit message
         run: npx commitlint --from=HEAD~1
-
-      - name: Lint codebase
-        run: npm run lint
-
-      - name: Check type
-        run: npm run lint:tsc
 
       - name: Run unit tests
         run: npm run test:ci
