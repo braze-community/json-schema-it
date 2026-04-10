@@ -30,6 +30,6 @@ jobs:
 
       - name: Deploy
         if: github.ref_name == 'master'
-        uses: remarkablemark/gitploy-action@v1
+        uses: remarkablemark/gitploy-action@75660ac1e40122df25660c14eaef1d55ffd11ff4 # v1.1.0
         with:
           directory: docs
