@@ -8,7 +8,9 @@
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "outDir": "cjs"
+    "rootDir": "src",
+    "outDir": "cjs",
+    "types": ["node", "jest"]
   },
   "include": ["src"],
   "exclude": ["node_modules", "src/**/*.test.ts"]
