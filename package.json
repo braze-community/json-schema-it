@@ -59,7 +59,7 @@
     "jest": "30.4.2",
     "lint-staged": "17.0.4",
     "prettier": "3.8.3",
-    "publint": "0.3.20",
+    "publint": "0.3.21",
     "ts-jest": "29.4.9",
     "ts-node": "10.9.2",
     "typedoc": "0.28.19",
